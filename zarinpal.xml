@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="3.x" type="plugin" group="vmpayment" method="upgrade">
+    <name>پلاگین درگاه پرداخت زرین پال برای ویرچومارت ۳ </name>
+    <creationDate>95/3/3</creationDate>
+    <author>Mohsen Ranjbar</author>
+    <authorUrl>https://zarinpal.com</authorUrl>
+    <copyright>https://zarinpal.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>3.0.2</version>
+    <description>
+	<![CDATA[
+		<body>
+		    <h4 style="text-align:center" align="center" dir="rtl">
+		    پلاگین پرداخت زرین پال برای کامپوننت ویرچومارت ۳
+		    </h4>
+		    <table align="center">
+		        <thead>
+		            <tr>
+		                <th>
+		                ویرایشگر
+		                </th>
+		                <th>
+		                محسن رنجبر - <a href="https://ir.linkedin.com/in/mimrahe">mimrahe at linkedin.com</a>
+		                </th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr>
+		                <td>
+		                پشتیبانی قوی توسط
+		                </td>
+		                <td>
+		                تیم زرین پال - <a href="https://zarinpal.com">Zarinpal.com</a>
+		                </td>
+		            </tr>
+		        </tbody>
+		    </table>
+		</body>
+	]]>
+	</description>
+    <files>
+        <filename plugin="zarinpal">zarinpal.php</filename>
+        <filename>zarinpal.xml</filename>
+        <filename>index.html</filename>
+        <folder>language</folder>
+        <folder>zarinpal</folder>
+    </files>
+    <languages folder="language">
+        <language tag="fa-IR">fa-IR/fa-IR.plg_vmpayment_zarinpal.ini</language>
+    </languages>
+
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/elements">
+                <field type="spacer" name="spacer" label="ZARINPAL_DESCRIPTION"/>
+                <field type="text" name="api" label="API" description="API_DESC" />
+				<field name="currency" type="list" default="Rial" label="CURRENCY" description="CURRENCY_DESC">
+					<option value="Rial">RIAL</option>
+					<option value="Toman">TOMAN</option>
+				</field>
+            </fieldset>
+        </fields>
+    </vmconfig>
+</extension>
