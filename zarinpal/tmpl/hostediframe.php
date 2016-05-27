@@ -1,13 +1,11 @@
 <?php
 /**
- *
- * zarinpal payment plugin
+ * zarinpal payment plugin.
  *
  * @author Valerie
+ *
  * @version $Id: zarinpal.php 7217 2013-09-18 13:42:54Z alatak $
- * @package VirtueMart
- * @subpackage payment
- * Copyright (C) 2004-2014 Virtuemart Team. All rights reserved.
+ *
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -17,15 +15,12 @@
  *
  * http://virtuemart.net
  */
-
-
-
-if ($viewData['isMobile'] ) {
-    $width="100%";
-    $height="100%";
+if ($viewData['isMobile']) {
+    $width = '100%';
+    $height = '100%';
 } else {
-	$width="100%";
-	$height="600px";
+    $width = '100%';
+    $height = '600px';
 }
  ?>
 <iframe name="hss_iframe" width="<?php echo $width ?>" height="<?php echo $height ?>"  src="<?php echo $viewData['url'] ?>"></iframe>

@@ -1,13 +1,11 @@
 <?php
 /**
- *
- * zarinpal payment plugin
+ * zarinpal payment plugin.
  *
  * @author Jeremy Magne
+ *
  * @version $Id: zarinpal.php 7217 2013-09-18 13:42:54Z alatak $
- * @package VirtueMart
- * @subpackage payment
- * Copyright (C) 2004-2014 Virtuemart Team. All rights reserved.
+ *
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -19,11 +17,11 @@
  */
 defined('_JEXEC') or die();
 
-$success = $viewData["success"];
-$payment_name = $viewData["payment_name"];
-$payment = $viewData["payment"];
-$order = $viewData["order"];
-$currency = $viewData["currency"];
+$success = $viewData['success'];
+$payment_name = $viewData['payment_name'];
+$payment = $viewData['payment'];
+$order = $viewData['order'];
+$currency = $viewData['currency'];
 
 ?>
 <br />
@@ -37,20 +35,29 @@ $currency = $viewData["currency"];
     	<td><?php echo vmText::_('COM_VIRTUEMART_ORDER_NUMBER'); ?></td>
         <td><?php echo $order['details']['BT']->order_number; ?></td>
     </tr>
-	<?php if ($success) { ?>
+	<?php if ($success) {
+    ?>
 	<tr>
-		<td><?php echo vmText::_('VMPAYMENT_zarinpal_API_AMOUNT'); ?></td>
-        <td><?php echo $payment->mc_gross . ' ' . $payment->mc_currency; ?></td>
+		<td><?php echo vmText::_('VMPAYMENT_zarinpal_API_AMOUNT');
+    ?></td>
+        <td><?php echo $payment->mc_gross.' '.$payment->mc_currency;
+    ?></td>
     </tr>
 
 	<tr>
-    	<td><?php echo vmText::_('VMPAYMENT_zarinpal_API_TRANSACTION_ID'); ?></td>
-        <td><?php echo $payment->txn_id; ?></td>
+    	<td><?php echo vmText::_('VMPAYMENT_zarinpal_API_TRANSACTION_ID');
+    ?></td>
+        <td><?php echo $payment->txn_id;
+    ?></td>
     </tr>
-    <?php }  ?>
+    <?php 
+}  ?>
 
 </table>
-<?php if ($success) { ?>
+<?php if ($success) {
+    ?>
 	<br />
-	<a class="vm-button-correct" href="<?php echo JRoute::_('index.php?option=com_virtuemart&view=orders&layout=details&order_number='.$viewData["order"]['details']['BT']->order_number.'&order_pass='.$viewData["order"]['details']['BT']->order_pass, false)?>"><?php echo vmText::_('COM_VIRTUEMART_ORDER_VIEW_ORDER'); ?></a>
-<?php } ?>
+	<a class="vm-button-correct" href="<?php echo JRoute::_('index.php?option=com_virtuemart&view=orders&layout=details&order_number='.$viewData['order']['details']['BT']->order_number.'&order_pass='.$viewData['order']['details']['BT']->order_pass, false)?>"><?php echo vmText::_('COM_VIRTUEMART_ORDER_VIEW_ORDER');
+    ?></a>
+<?php 
+} ?>

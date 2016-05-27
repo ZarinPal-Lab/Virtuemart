@@ -1,13 +1,11 @@
 <?php
 /**
- *
- * zarinpal payment plugin
+ * zarinpal payment plugin.
  *
  * @author Valerie Isaksen
+ *
  * @version $Id: zarinpal.php 7217 2013-09-18 13:42:54Z alatak $
- * @package VirtueMart
- * @subpackage payment
- * Copyright (C) 2004-2014 Virtuemart Team. All rights reserved.
+ *
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -24,10 +22,11 @@
 
 <div>
     <?php
-    if ($viewData['sandbox'] ) {
+    if ($viewData['sandbox']) {
         ?>
 		<span style="color:red;font-weight:bold">Sandbox (<?php echo $viewData['virtuemart_paymentmethod_id'] ?>)</span>
     <?php
+
     }
     ?>
 <a href="<?php echo $viewData['link'] ?>" title="<?php echo $viewData['text'] ?>">
