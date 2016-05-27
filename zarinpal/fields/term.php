@@ -1,13 +1,11 @@
 <?php
 /**
- *
- * zarinpal  payment plugin
+ * zarinpal  payment plugin.
  *
  * @author Jeremy Magne
+ *
  * @version $Id: zarinpal.php 7217 2013-09-18 13:42:54Z alatak $
- * @package VirtueMart
- * @subpackage payment
- * Copyright (C) 2004-2014 Virtuemart Team. All rights reserved.
+ *
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  * VirtueMart is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -17,25 +15,22 @@
  *
  * http://virtuemart.net
  */
-
-
 defined('_JEXEC') or die();
 
 jimport('joomla.form.formfield');
 
-class JFormFieldTerm extends JFormField {
+class JFormFieldTerm extends JFormField
+{
+    protected $type = 'Term';
 
-	protected $type = 'Term';
+    protected function getInput()
+    {
+        $max = 52;
+        $options = [];
+        for ($i = 1; $i <= $max; $i++) {
+            $options[] = JHTML::_('select.option', $i, $i);
+        }
 
-	protected function getInput() {
-
-		$max = 52;
-		$options = array();
-		for ($i = 1; $i <= $max; $i++) {
-			$options[] = JHTML::_('select.option', $i, $i);
-		}
-
-		return JHTML::_('select.genericlist', $options, $this->name, 'size="1"', 'value', 'text', $this->value);
-
-	}
+        return JHTML::_('select.genericlist', $options, $this->name, 'size="1"', 'value', 'text', $this->value);
+    }
 }
