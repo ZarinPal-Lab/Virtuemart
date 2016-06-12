@@ -261,7 +261,7 @@ class plgVmPaymentzarinpal extends vmPSPlugin
                     $subject = ''.$sitename.' - فاکتور خريد';
                     $add = JURI::base().'index.php?option=com_virtuemart&view=orders&layout=details&order_number='.$ons.'&order_pass='.$opass;
                     $body = 'از خريد شما ممنونيم'.'<br />'.'</h1><br/><h3>شماره پيگيري شما :'.$rahgiri.'</h3><br/><h3>شماره ارجاع:'.$refrencess.'</h3>'.'<b>شماره فاکتور'.':</b>'.' '.$ons.'<br/>'.'<a href="'.$add.'">نمايش فاکتور</a>';
-                    $to = [$mm, $mmm];
+                    $to = [$mm];
                     $config = &JFactory::getConfig();
                     $from = [
                     $config->get('mailfrom'),
@@ -278,7 +278,9 @@ class plgVmPaymentzarinpal extends vmPSPlugin
                         $mailer->isHTML();
                         $mailer->send();
                     } catch (Exception $e) {
-                        // do nothing
+                        echo '<pre>';
+                        print_r($e->getMessage());
+                        echo '</pre>';
                     }
                     $cart = VirtueMartCart::getCart();
                     $cart->emptyCart();
